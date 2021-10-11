@@ -16,7 +16,7 @@ pipeline {
         stage("deploy") {
             steps {
                echo "deploy the app ..."
-               sh './mvnw deploy -Dcheckstyle.skip'
+               sh './mvnw deploy -Dcheckstyle.skip -s settings.xml'
                sh 'docker build . -t  viswajith/petclinic'
                sh 'docker run -p 0.0.0.0:9999:9999  viswajith/petclinic'
             }
