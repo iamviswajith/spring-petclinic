@@ -279,20 +279,9 @@
 
   <repositories>
     <repository>
-      <id>spring-snapshots</id>
-      <name>Spring Snapshots</name>
-      <url>https://repo.spring.io/snapshot</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
+      <id>jcenter</id>
+      <name>jcenter</name>
+      <url>https://jcenter.bintray.com</url>
     </repository>
   </repositories>
 
@@ -383,5 +372,18 @@
       </build>
     </profile>
   </profiles>
+
+  <distributionManagement>
+    <repository>
+      <id>central</id>
+      <name>a0bc1cc0nlq52-artifactory-primary-0-releases</name>
+      <url>https://interview.jfrog.io/artifactory/default-maven-virtual</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>a0bc1cc0nlq52-artifactory-primary-0-snapshots</name>
+      <url>https://interview.jfrog.io/artifactory/default-maven-virtual</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
