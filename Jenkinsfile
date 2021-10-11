@@ -10,11 +10,13 @@ pipeline {
         stage("test") {
             steps {
                echo "test the app"
+               sh './mvnw test -Dcheckstyle.skip'
             }
         }
         stage("deploy") {
             steps {
                echo "deploy the app ..."
+               sh './mvnw deploy -Dcheckstyle.skip'
                sh 'docker build . -t  viswajith/petclinic'
                sh 'docker run -p 0.0.0.0:9999:9999  viswajith/petclinic'
             }
